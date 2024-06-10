@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}My Top 10 Animes{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="heading">My Top 10 Animes</h1>
+  <p class="description">These are my all-time favourite animes.</p>
+    {% for anime in animes %}
+
+  <div class="card" >
+    <div class="front" style="background-image: url('{{anime.img_url}}');">
+        <p class="large">{{ anime.ranking }}</p>
+    </div>
+    <div class="back">
+      <div>
+    <div class="title">{{anime.title}} <span class="release_date">({{anime.year}})</span></div>
+        <div class="rating">
+            <label>{{anime.rating}}</label>
+          <i class="fas fa-star star"></i>
+        </div>
+          <p class="review">"{{anime.review}}"</p>
+        <p class="overview">{{anime.description}}</p>
+
+        <a href="{{ url_for('rate_anime', id=anime.id) }}" class="button">Update</a>
+        <a href="{{ url_for('delete_anime', id=anime.id) }}" class="button delete-button">Delete</a>
+
+      </div>
+    </div>
+  </div>
+
+    {% endfor %}
+</div>
+<div class="container text-center add">
+<a href="{{ url_for('add_anime') }}" class="button">Add Anime</a>
+</div>
+
+{% endblock %}
