@@ -88,5 +88,9 @@ https://github.com/M-K4SH1F/Anime-Tracker/assets/159590221/c1818f21-4608-4a85-83
  - WTForms: Form handling library.
  - Requests: HTTP library for making API requests.
 
+## Deployment
+
+The Anime Tracker project has been successfully deployed:
+https://anime-tracker-phi.vercel.app/
 
 This project demonstrates how to build a comprehensive Flask application with CRUD operations, form handling, and external API integration. It is an excellent example for anyone looking to learn Flask or web development in Python.
